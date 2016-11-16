@@ -5,7 +5,7 @@ using System;
 
 public class Timer : MonoBehaviour {
 	
-	public float timeLimit = 15.0f;
+	public static float timeLimit = 15.0f;
 	public Text timerLabel;
 
 	
