@@ -13,27 +13,21 @@ public class InputScr : MonoBehaviour {
     InputField.SubmitEvent se;
     public Text output;
 	public Text outputEnd;
-	private static float time = Timer.timeLimit;
 	
-	public static string fullText = "";
+	string fullText = "";
 	int currentLocation;
      
-    void Start () {
-		
+    void Start () 
+	{
         input = gameObject.GetComponent<InputField>();
         se = new InputField.SubmitEvent();
         se.AddListener(SubmitInput);
         input.onEndEdit = se;
-		
     }
 	
 	void Update () 
 	{
-		time -= Time.deltaTime;
-		if (time <= 0.0f)
-		{
-			outputEnd.text = fullText;
-		}
+		outputEnd.text = fullText;
 	}
  
     private void SubmitInput(string arg0)
@@ -41,7 +35,7 @@ public class InputScr : MonoBehaviour {
         string newText = arg0;
         output.text = newText;
 		fullText += newText + " ";
-		Debug.Log(fullText);
+		//Debug.Log(fullText);
         input.text = "";
         input.ActivateInputField();
     }

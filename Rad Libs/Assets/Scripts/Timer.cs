@@ -5,18 +5,17 @@ using System;
 
 public class Timer : MonoBehaviour {
 	
-	public static float timeLimit = 15.0f;
+	public static float timeLimit;
 	public Text timerLabel;
 
 	
-	void Start () 
+	void Awake () 
 	{
-	
+		timeLimit = 45.0f;
 	}
 	
 	void Update () 
 	{
-		
 		timeLimit -= Time.deltaTime;
 		int roundedTL = (int)(timeLimit + 0.5f);
 		if (timeLimit < 0)
